@@ -61,6 +61,12 @@ public class Tree {
 		
 	}
 	
+	public void remover(No no){
+		if(this.root == null){
+			
+		}
+	}
+	
 	// Implementação da busca
 	public No search_Tree(Tree t, No key){
 		if(t.root == key){
@@ -72,31 +78,41 @@ public class Tree {
 		}
 	}
 	
-	// faltando implementar percorrerInOrdem();
-	public void in_Ordem(No root){
+	// percorrerInOrdem();
+	public void percorrerInOrdem() throws Exception{
 		if(this.root == null){
-			return;
+			throw new Exception();
+		}else if(this.leftTree!=null){
+			this.leftTree.percorrerInOrdem();
+		}this.root.getAluno().getMatricula();
+		if(this.rightTree!=null){
+			this.rightTree.percorrerInOrdem();
 		}
-		this.leftTree.in_Ordem(root);
-		this.rightTree.in_Ordem(root);
-		
 	}
 
 	
-	// faltando implementar percorrerPreOrdem();
-	public void pre_Ordem(No root){
-		if(root == null){
-			//
+	//percorrerPreOrdem();
+	public void percorrerPreOrdem() throws Exception{
+		this.root.getAluno().getMatricula();
+		if(this.root == null){
+			throw new Exception();
+		}else if(this.leftTree!= null){
+			this.leftTree.percorrerPreOrdem();
+		}if(this.rightTree!=null){
+			this.rightTree.percorrerPreOrdem();
 		}
-		
 	}
 	
-	// faltando implementar percorrerPosOrdem();
-	public void pos_Ordem(No root){
+	// percorrerPosOrdem();
+	public void percorrerPosOrdem() throws Exception{
 		if(this.root == null){
-			return;
-		}this.leftTree.pos_Ordem(root);
-		this.rightTree.pos_Ordem(root);
+			throw new Exception();
+		}else if(this.leftTree!= null){
+			this.leftTree.percorrerPosOrdem();
+		}if(this.rightTree!=null){
+			this.rightTree.percorrerPosOrdem();
+		}
+		this.root.getAluno().getMatricula();
 	}
 
 }
